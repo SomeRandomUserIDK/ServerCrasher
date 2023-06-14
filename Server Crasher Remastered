@@ -1,0 +1,78 @@
+local gui = Instance.new("ScreenGui")
+gui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+
+
+local button = Instance.new("TextButton")
+button.Name = "HehehawCrashButton"
+button.Text = "Crash server lol"
+button.Size = UDim2.new(0, 200, 0, 50)
+button.Position = UDim2.new(0.5, -100, 0.5, -25)
+button.BackgroundColor3 = Color3.new(0, 0, 0)
+button.TextColor3 = Color3.new(0, 0, 1) -- Blue color
+button.Parent = gui
+
+local function buttonPressed()
+game:GetService("StarterGui"):SetCore("SendNotification", {
+    Title = "ServerCrasher";
+    Text = "Are you Sure Maybe u pressed this accidently?";
+    Duration = 999999;
+    Button1 = "Yes";
+    Button2 = "No";
+})
+wait(5)
+game:GetService("StarterGui"):SetCore("SendNotification", {
+    Title = "Server Crasher";
+    Text = "Please Wait.! if >:( ";
+    Duration = 10;
+wait(10)
+game:GetService("StarterGui"):SetCore("SendNotification", {
+    Title = "Server Crasher";
+    Text = "made by महत्वपूर्ण नहीं भाई आप मेरी प्रो#1129";
+    Duration = 9999999999999999999999;
+})
+wait(1)
+game:GetService("StarterGui"):SetCore("SendNotification", {
+    Title = "ServerCrasher";
+    Text = "1";
+    Duration = 10;
+})
+wait(2)
+game:GetService("StarterGui"):SetCore("SendNotification", {
+    Title = "ServerCrasher";
+    Text = "2";
+    Duration = 10;
+})
+wait(3)
+game:GetService("StarterGui"):SetCore("SendNotification", {
+    Title = "ServerCrasher";
+    Text = "3";
+    Duration = 10;
+})
+wait(4)
+game:GetService("StarterGui"):SetCore("SendNotification", {
+    Title = "ServerCrasher";
+    Text = "4";
+    Duration = 10;
+})
+wait(5)
+game:GetService("StarterGui"):SetCore("SendNotification", {
+    Title = "ServerCrasher";
+    Text = "Crashing Server... Please wait!";
+    Duration = 10;
+})
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+local SayMessageRequest = ReplicatedStorage:FindFirstChild("SayMessageRequest", true)
+
+while wait() do
+local Message = "🤡"
+local Unicode = " "
+Message = Message .. Unicode:rep(200 - #Message)
+
+if SayMessageRequest then
+    for i = 1, 7 do
+        SayMessageRequest:FireServer(Message, "All")
+    end
+end
+wait(math.random(12,14))
+end
+button.MouseButton1Click:Connect(buttonPressed)
