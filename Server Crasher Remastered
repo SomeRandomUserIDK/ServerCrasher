@@ -62,7 +62,15 @@ game:GetService("StarterGui"):SetCore("SendNotification", {
 })
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local SayMessageRequest = ReplicatedStorage:FindFirstChild("SayMessageRequest", true)
+local player = game.Players.LocalPlayer
+        local humanoid = player.Character and player.Character:FindFirstChild("Humanoid")
+        if humanoid then
+            humanoid.ChatBubble:Destroy()
+        end
+    end
+end
 
+game.Players.LocalPlayer.Chatted:Connect(onChatted)
 while wait() do
 local Message = "🤡"
 local Unicode = " "
